@@ -26,6 +26,13 @@ public class Homework1 {
       DECEMBER,
     }
 
+    enum TimeOfYear {
+      WINTER,
+      SPRING,
+      SUMMER,
+      AUTUMN,
+    }
+
     public static Map<Month, Integer> buildMonthsMap () {
       Map<Month, Integer> months = new HashMap<>();
 
