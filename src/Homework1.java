@@ -52,6 +52,25 @@ public class Homework1 {
       return months; // возвращаем готовый словарь с месяцами и днями
     }
 
+    public static Map<Month, TimeOfYear> bildTimeMap() {
+      Map<Month, TimeOfYear> times = new HashMap<>();
+
+      times.put(Month.JANUARY, TimeOfYear.WINTER);
+      times.put(Month.FEBRUARY, TimeOfYear.WINTER);
+      times.put(Month.MARCH, TimeOfYear.SPRING);
+      times.put(Month.APRIL, TimeOfYear.SPRING);
+      times.put(Month.MAY, TimeOfYear.SPRING);
+      times.put(Month.JUNE, TimeOfYear.SUMMER);
+      times.put(Month.JULY, TimeOfYear.SUMMER);
+      times.put(Month.AUGUST, TimeOfYear.SUMMER);
+      times.put(Month.SEPTEMBER, TimeOfYear.AUTUMN);
+      times.put(Month.OCTOBER, TimeOfYear.AUTUMN);
+      times.put(Month.NOVEMBER, TimeOfYear.AUTUMN);
+      times.put(Month.DECEMBER, TimeOfYear.WINTER);
+
+      return times;
+    }
+
     public static void main (String[]args) throws IOException {
       BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
 
