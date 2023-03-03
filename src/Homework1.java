@@ -77,18 +77,18 @@ public class Homework1 {
       System.out.print("Enter the month: ");
       String month = inputReader.readLine();
       Month monthToLook = Month.valueOf(month.toUpperCase());
-
       Map<Month, Integer> monthDays = buildMonthsMap();
+      Map<Month, TimeOfYear> timeMonth = bildTimeMap();
 
       if (monthDays.containsKey(monthToLook)) {
         System.out.printf("The month '%s' contains %d days%n", month, monthDays.get(monthToLook));
-
         System.out.printf("The month '%s' has ordinal number %d%n", month, monthToLook.ordinal() + 1);
+        System.out.printf("The month '%s' is '%s'%n", month, timeMonth.get(monthToLook));
 
         int nextMonthIndex = (monthToLook.ordinal() + 1);
         Month nextMonth = Month.values()[nextMonthIndex % Month.values().length];
-        System.out.printf("The next month is '%s'%n", nextMonth);
-        System.out.printf("It has %d days", monthDays.get(nextMonth));
+        System.out.printf("The next month is '%s' contains %d days%n", nextMonth, monthDays.get(nextMonth));
+        System.out.printf("The month '%s' is '%s'%n", nextMonth, timeMonth.get(nextMonth));
       } else {
         System.out.println("No such month: " + month);
       }
