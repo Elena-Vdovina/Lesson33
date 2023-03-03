@@ -32,23 +32,17 @@ public class Homework2 {
       AUTUMN,
     }
 
-    public static Map<Month, Integer> buildMonthsMap () {
+    public static Map<Month, Integer> buildMonthsMap(File inputFile) throws IOException {
+      BufferedReader inputFileReader = new BufferedReader(new FileReader(inputFile));
       Map<Month, Integer> months = new HashMap<>();
 
-      months.put(Month.JANUARY, 31);
-      months.put(Month.FEBRUARY, 28);
-      months.put(Month.MARCH, 31);
-      months.put(Month.APRIL, 30);
-      months.put(Month.MAY, 31);
-      months.put(Month.JUNE, 30);
-      months.put(Month.JULY, 31);
-      months.put(Month.AUGUST, 31);
-      months.put(Month.SEPTEMBER, 30);
-      months.put(Month.OCTOBER, 31);
-      months.put(Month.NOVEMBER, 30);
-      months.put(Month.DECEMBER, 31);
-
-      return months; // возвращаем готовый словарь с месяцами и днями
+      Month[] month_ = Month.values();
+      for (Month month : month_) {
+        int days = Integer.parseInt(inputFileReader.readLine());
+        months.put(month, days);
+      }
+      inputFileReader.close();
+      return months;
     }
 
     public static Map<Month, TimeOfYear> bildTimeMap() {
